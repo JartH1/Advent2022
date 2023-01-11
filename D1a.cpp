@@ -33,6 +33,8 @@ int main() {
         in.clear();
         in.seekg(0);
 
+
+        /*Sum all calories untill there is an empty line, place value in array, compare with max value to see if max can be replaced*/
         while (in.peek() !=EOF) {
             while(getline(in,line)) {
                 if(line.empty()) {
@@ -49,6 +51,7 @@ int main() {
             }
         }
 
+        /*summarize and print conclusions*/
         std::printf("the top three amount of calories are: %d, %d and %d", calorie_array[0], calorie_array[1], calorie_array[2]);
         std::sort(calorie_array, calorie_array + number_of_elves);
         std::printf("the top three amount of calories are: %d, %d and %d", calorie_array[number_of_elves-1], calorie_array[number_of_elves-2], calorie_array[number_of_elves-3]);
